@@ -131,6 +131,16 @@
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--accent)) 50%,
+      hsl(var(--primary)) 100%
+    );
+    background-size: 200% 100%;
+  }
 }
 
 @layer components {
