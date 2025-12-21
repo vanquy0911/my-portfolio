@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { href: '#about', label: 'About' },
+  { href: '#activities', label: 'Activities' },
+  { href: '#technologies', label: 'Technologies' },
   { href: '#projects', label: 'Projects' },
-  { href: '#blog', label: 'Blog' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -38,7 +40,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
@@ -51,6 +53,9 @@ const Navbar = () => {
               </li>
             ))}
             <li>
+              <ThemeToggle />
+            </li>
+            <li>
               <a href="#contact" className="btn-primary text-sm">
                 Let's Talk
               </a>
@@ -58,13 +63,16 @@ const Navbar = () => {
           </ul>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
