@@ -26,9 +26,10 @@ const About = () => {
               Passionate about building <span className="gradient-text">meaningful products</span>
             </h2>
             <p className="body-lg">
-              With 5+ years of experience in software development, I specialize in creating 
-              full-stack applications that combine beautiful design with robust functionality. 
-              I believe in writing code that tells a story.
+            I am an IT student with foundational knowledge of React.js, 
+            Node.js, Express.js, JavaScript, TypeScript, and Tailwind CSS, 
+            seeking an Intern position to gain practical experience and 
+            develop my skills in a professional environment.
             </p>
           </div>
         </AnimateOnScroll>
