@@ -23,18 +23,6 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left content */}
           <div className="max-w-2xl">
-            {/* Status badge */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-border mb-8 opacity-0 animate-fade-in-up hover:border-primary/50 transition-colors cursor-default"
-              style={{ animationDelay: '0.1s' }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="text-sm text-muted-foreground">Available for new opportunities</span>
-            </div>
-
             {/* Main heading */}
             <h1
               className="heading-xl mb-6 opacity-0 animate-fade-in-up"
