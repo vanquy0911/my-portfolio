@@ -1,5 +1,5 @@
 import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
-import Hero3DBlocks from './Hero3DBlocks';
+import Hero3DKeyboard from './Hero3DKeyboard';
 
 const Hero = () => {
   return (
@@ -82,12 +82,12 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right 3D Blocks */}
+          {/* Right 3D Keyboard */}
           <div 
             className="hidden lg:block h-[500px] opacity-0 animate-fade-in"
             style={{ animationDelay: '0.6s' }}
           >
-            <Hero3DBlocks />
+            <Hero3DKeyboard />
           </div>
         </div>
 
