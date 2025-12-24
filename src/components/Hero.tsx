@@ -1,4 +1,5 @@
 import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Hero3DKeyboard from './Hero3DKeyboard';
 
 const Hero = () => {
@@ -8,9 +9,9 @@ const Hero = () => {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse opacity-50" />
-      
+
       {/* Grid pattern overlay */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
@@ -18,7 +19,7 @@ const Hero = () => {
           backgroundSize: '60px 60px',
         }}
       />
-      
+
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left content */}
@@ -28,7 +29,7 @@ const Hero = () => {
               className="heading-xl mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.2s' }}
             >
-              Hi, I'm <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Alex Chen</span>
+              Hi, I'm <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Ryan Quy</span>
               <br />
               <span className="text-muted-foreground">Software Developer</span>
             </h1>
@@ -38,7 +39,7 @@ const Hero = () => {
               className="body-lg max-w-xl mb-10 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.3s' }}
             >
-              I craft elegant digital experiences with clean code and thoughtful design. 
+              I craft elegant digital experiences with clean code and thoughtful design.
               Specializing in React, TypeScript, and modern web technologies.
             </p>
 
@@ -63,8 +64,8 @@ const Hero = () => {
               style={{ animationDelay: '0.5s' }}
             >
               {[
-                { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                { icon: Github, href: 'https://github.com/vanquy0911', label: 'GitHub' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/v%C4%83n-qu%C3%BD-03b9533a2/', label: 'LinkedIn' },
                 { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
               ].map((social, index) => (
                 <a
@@ -83,7 +84,7 @@ const Hero = () => {
           </div>
 
           {/* Right 3D Keyboard */}
-          <div 
+          <div
             className="hidden lg:block h-[500px] opacity-0 animate-fade-in"
             style={{ animationDelay: '0.6s' }}
           >

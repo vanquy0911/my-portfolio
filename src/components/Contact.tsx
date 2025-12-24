@@ -15,15 +15,15 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast({
       title: "Message sent!",
       description: "Thanks for reaching out. I'll get back to you soon.",
     });
-    
+
     setFormData({ name: '', email: '', message: '' });
     setIsSubmitting(false);
   };
@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding scroll-mt-28">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left column - Info */}
@@ -44,10 +44,10 @@ const Contact = () => {
                 Let's build something <span className="gradient-text">amazing</span> together
               </h2>
               <p className="body-lg mb-10">
-                Have a project in mind or just want to chat? I'm always open to discussing 
+                Have a project in mind or just want to chat? I'm always open to discussing
                 new opportunities, creative ideas, or ways to help bring your vision to life.
               </p>
-              
+
               <div className="space-y-6">
                 <AnimateOnScroll delay={100} animation="fade-up">
                   <div className="flex items-center gap-4 group">
@@ -56,13 +56,13 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <a href="mailto:hello@alexchen.dev" className="font-medium text-foreground hover:text-primary transition-colors">
-                        hello@alexchen.dev
+                      <a href="mailto:hello@ryanquy.dev" className="font-medium text-foreground hover:text-primary transition-colors">
+                        hello@ryanquy.dev
                       </a>
                     </div>
                   </div>
                 </AnimateOnScroll>
-                
+
                 <AnimateOnScroll delay={200} animation="fade-up">
                   <div className="flex items-center gap-4 group">
                     <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/10 transition-colors">
@@ -70,7 +70,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium text-foreground">San Francisco, CA</p>
+                      <p className="font-medium text-foreground">9 District, Ho Chi Minh city</p>
                     </div>
                   </div>
                 </AnimateOnScroll>
@@ -97,7 +97,7 @@ const Contact = () => {
                     placeholder="Your name"
                   />
                 </div>
-                
+
                 <div className="group">
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 group-focus-within:text-primary transition-colors">
                     Email
@@ -113,7 +113,7 @@ const Contact = () => {
                     placeholder="your@email.com"
                   />
                 </div>
-                
+
                 <div className="group">
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2 group-focus-within:text-primary transition-colors">
                     Message
@@ -129,7 +129,7 @@ const Contact = () => {
                     placeholder="Tell me about your project..."
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}

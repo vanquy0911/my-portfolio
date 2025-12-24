@@ -1,64 +1,7 @@
-import { Code2, Coffee, Gamepad2, Music, BookOpen, Plane, Camera, Dumbbell } from 'lucide-react';
+import { Code2, Coffee, Gamepad2, Music, BookOpen, Plane, Camera, Dumbbell, ArrowRight } from 'lucide-react';
 import { AnimateOnScroll, StaggerChildren } from './AnimateOnScroll';
 
-const activities = [
-  {
-    icon: Code2,
-    title: 'Open Source Contributing',
-    description: 'Building and maintaining open source projects',
-    gradient: 'from-primary to-accent',
-    stats: '50+ PRs',
-  },
-  {
-    icon: Coffee,
-    title: 'Tech Blogging',
-    description: 'Writing about web development and best practices',
-    gradient: 'from-accent to-primary',
-    stats: '30+ Articles',
-  },
-  {
-    icon: Gamepad2,
-    title: 'Game Development',
-    description: 'Creating indie games in spare time',
-    gradient: 'from-primary via-accent to-primary',
-    stats: '3 Games',
-  },
-  {
-    icon: Music,
-    title: 'Music Production',
-    description: 'Composing electronic and ambient music',
-    gradient: 'from-accent to-primary',
-    stats: '12 Tracks',
-  },
-  {
-    icon: BookOpen,
-    title: 'Continuous Learning',
-    description: 'Always exploring new technologies and frameworks',
-    gradient: 'from-primary to-accent',
-    stats: '20+ Courses',
-  },
-  {
-    icon: Plane,
-    title: 'Travel & Exploration',
-    description: 'Experiencing different cultures and tech scenes',
-    gradient: 'from-accent via-primary to-accent',
-    stats: '15 Countries',
-  },
-  {
-    icon: Camera,
-    title: 'Photography',
-    description: 'Capturing urban landscapes and tech aesthetics',
-    gradient: 'from-primary to-accent',
-    stats: '500+ Photos',
-  },
-  {
-    icon: Dumbbell,
-    title: 'Fitness & Health',
-    description: 'Balancing coding with physical wellness',
-    gradient: 'from-accent to-primary',
-    stats: '5x Weekly',
-  },
-];
+import { activities } from '@/data/activities';
 
 const Activities = () => {
   return (
@@ -66,19 +9,28 @@ const Activities = () => {
       {/* Background effects */}
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-      
+
       <div className="section-container relative z-10">
         <AnimateOnScroll animation="fade-up">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-secondary border border-border text-sm font-medium text-muted-foreground mb-4">
-              Beyond Code
-            </span>
-            <h2 className="heading-lg mb-4">
-              My <span className="gradient-text">Activities</span>
-            </h2>
-            <p className="body-lg max-w-2xl mx-auto">
-              When I'm not coding, here's what keeps me inspired and creative
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <div className="max-w-2xl">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-secondary border border-border text-sm font-medium text-muted-foreground mb-4">
+                Beyond Code
+              </span>
+              <h2 className="heading-lg mb-4">
+                My <span className="gradient-text">Activities</span>
+              </h2>
+              <p className="body-lg max-w-2xl">
+                When I'm not coding, here's what keeps me inspired and creative
+              </p>
+            </div>
+            <a
+              href="/activities"
+              className="btn-secondary group"
+            >
+              View All Activities
+              <ArrowRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
           </div>
         </AnimateOnScroll>
 
@@ -111,7 +63,7 @@ const ActivityCard = ({ activity, index }: ActivityCardProps) => {
     >
       {/* Gradient overlay on hover */}
       <div className={`absolute inset-0 bg-gradient-to-br ${activity.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-      
+
       {/* Glow effect */}
       <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
 

@@ -1,5 +1,6 @@
 import { Code2, Palette, Rocket, Users } from 'lucide-react';
 import { AnimateOnScroll } from './AnimateOnScroll';
+import personImage from '@/uploads/personal/person.jpg';
 
 const skills = [
   { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'] },
@@ -20,17 +21,33 @@ const About = () => {
       <div className="section-container">
         {/* Section header */}
         <AnimateOnScroll animation="fade-up">
-          <div className="max-w-2xl mb-16">
-            <p className="text-sm font-medium text-primary mb-4">About Me</p>
-            <h2 className="heading-lg mb-6">
-              Passionate about building <span className="gradient-text">meaningful products</span>
-            </h2>
-            <p className="body-lg">
-            I am an IT student with foundational knowledge of React.js, 
-            Node.js, Express.js, JavaScript, TypeScript, and Tailwind CSS, 
-            seeking an Intern position to gain practical experience and 
-            develop my skills in a professional environment.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="max-w-2xl">
+              <p className="text-sm font-medium text-primary mb-4">About Me</p>
+              <h2 className="heading-lg mb-6">
+                Passionate about building <span className="gradient-text">meaningful products</span>
+              </h2>
+              <p className="body-lg">
+                I am an IT student with a strong interest in web development,
+                building projects using React.js, Node.js, Express.js, JavaScript, TypeScript,
+                and Tailwind CSS. I am looking for an Intern position to gain real-world experience,
+                learn from professionals, and grow as a developer.
+              </p>
+            </div>
+
+            {/* Profile Image */}
+            <div className="relative group">
+              <div className="aspect-square max-w-md mx-auto overflow-hidden rounded-2xl border-2 border-border rotate-3 transition-transform duration-500 group-hover:rotate-0">
+                {/* Fallback or real image */}
+                <img
+                  src={personImage}
+                  alt="Ryan Quý"
+                  className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                />
+              </div>
+              {/* Decorative element */}
+              <div className="absolute -z-10 top-4 right-4 w-full h-full border-2 border-primary/20 rounded-2xl hidden md:block" />
+            </div>
           </div>
         </AnimateOnScroll>
 

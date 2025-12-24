@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, Suspense } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, RoundedBox, Float, Environment } from '@react-three/drei';
+import { OrbitControls, RoundedBox, Float, Environment, Text as ThreeText } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface KeyProps {
@@ -12,7 +12,7 @@ interface KeyProps {
   onKeyPress?: () => void;
 }
 
-const Key = ({ position, size, color, glowColor, onKeyPress }: KeyProps) => {
+const Key = ({ position, size, color, glowColor, onKeyPress, label }: KeyProps) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const [isPressed, setIsPressed] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -44,7 +44,7 @@ const Key = ({ position, size, color, glowColor, onKeyPress }: KeyProps) => {
           <meshBasicMaterial color={glowColor} transparent opacity={0.4} />
         </mesh>
       )}
-      
+
       <RoundedBox
         ref={meshRef}
         args={size}
@@ -66,6 +66,18 @@ const Key = ({ position, size, color, glowColor, onKeyPress }: KeyProps) => {
           emissive={isHovered ? glowColor : '#000000'}
           emissiveIntensity={isHovered ? 0.5 : 0}
         />
+        {label && (
+          <ThreeText
+            position={[0, 0.14, 0]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            fontSize={0.15}
+            color="#ffffff"
+            anchorX="center"
+            anchorY="middle"
+          >
+            {label}
+          </ThreeText>
+        )}
       </RoundedBox>
     </group>
   );
@@ -81,7 +93,7 @@ const Keyboard = () => {
       // Smooth tilt based on mouse position
       const targetRotationX = mouse.y * 0.15;
       const targetRotationY = mouse.x * 0.2;
-      
+
       groupRef.current.rotation.x = THREE.MathUtils.lerp(
         groupRef.current.rotation.x,
         targetRotationX,
@@ -116,35 +128,38 @@ const Keyboard = () => {
 
   const keys = [
     // Row 1
-    { pos: [-1.2, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
-    { pos: [-0.6, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
-    { pos: [0, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.purple, glow: glowColors.purple },
-    { pos: [0.6, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.pink, glow: glowColors.pink },
-    { pos: [1.2, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.blue, glow: glowColors.blue },
-    
+    { label: 'Q', pos: [-1.2, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
+    { label: 'W', pos: [-0.6, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
+    { label: 'E', pos: [0, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.purple, glow: glowColors.purple },
+    { label: 'R', pos: [0.6, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.pink, glow: glowColors.pink },
+    { label: 'T', pos: [1.2, 0, -0.8] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.blue, glow: glowColors.blue },
+
     // Row 2
-    { pos: [-1.2, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.purple, glow: glowColors.purple },
-    { pos: [-0.6, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
-    { pos: [0, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
-    { pos: [0.6, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
-    { pos: [1.2, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.violet, glow: glowColors.violet },
-    
+    { label: 'A', pos: [-1.2, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.purple, glow: glowColors.purple },
+    { label: 'S', pos: [-0.6, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
+    { label: 'D', pos: [0, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
+    { label: 'F', pos: [0.6, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
+    { label: 'G', pos: [1.2, 0, -0.2] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.violet, glow: glowColors.violet },
+
     // Row 3
-    { pos: [-1.2, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
-    { pos: [-0.6, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.pink, glow: glowColors.pink },
-    { pos: [0, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
-    { pos: [0.6, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.purple, glow: glowColors.purple },
-    { pos: [1.2, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
-    
+    { label: 'Z', pos: [-1.2, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
+    { label: 'X', pos: [-0.6, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.pink, glow: glowColors.pink },
+    { label: 'C', pos: [0, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
+    { label: 'V', pos: [0.6, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.purple, glow: glowColors.purple },
+    { label: 'B', pos: [1.2, 0, 0.4] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.cyan, glow: glowColors.cyan },
+
     // Space bar row
-    { pos: [-0.9, 0, 1.0] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.violet, glow: glowColors.violet },
-    { pos: [0, 0, 1.0] as [number, number, number], size: [1.4, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
-    { pos: [0.9, 0, 1.0] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.violet, glow: glowColors.violet },
+    { label: 'CTRL', pos: [-0.9, 0, 1.0] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.violet, glow: glowColors.violet },
+    { label: '', pos: [0, 0, 1.0] as [number, number, number], size: [1.4, 0.25, 0.5] as [number, number, number], color: keyColors.indigo, glow: glowColors.indigo },
+    { label: 'ALT', pos: [0.9, 0, 1.0] as [number, number, number], size: [0.5, 0.25, 0.5] as [number, number, number], color: keyColors.violet, glow: glowColors.violet },
   ];
 
   return (
     <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
       <group ref={groupRef}>
+        {/* Floating Text */}
+
+
         {/* Keyboard base with glassmorphism */}
         <RoundedBox args={[3.4, 0.15, 2.6]} radius={0.1} smoothness={4} position={[0, -0.2, 0.1]}>
           <meshPhysicalMaterial
@@ -158,7 +173,7 @@ const Keyboard = () => {
             clearcoatRoughness={0.1}
           />
         </RoundedBox>
-        
+
         {/* Keys */}
         {keys.map((key, index) => (
           <Key
@@ -167,6 +182,7 @@ const Keyboard = () => {
             size={key.size}
             color={key.color}
             glowColor={key.glow}
+            label={key.label}
           />
         ))}
       </group>
@@ -195,16 +211,16 @@ const Hero3DKeyboard = () => {
             penumbra={1}
             color="#a855f7"
           />
-          
+
           <Keyboard />
-          
+
           <OrbitControls
             enablePan={false}
             enableZoom={false}
             minPolarAngle={Math.PI / 4}
             maxPolarAngle={Math.PI / 2.2}
           />
-          
+
           <Environment preset="city" />
         </Suspense>
       </Canvas>
