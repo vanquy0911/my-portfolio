@@ -20,8 +20,8 @@ const Contact = () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Đã gửi tin nhắn!",
+      description: "Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể.",
     });
 
     setFormData({ name: '', email: '', message: '' });
@@ -39,13 +39,13 @@ const Contact = () => {
           {/* Left column - Info */}
           <AnimateOnScroll animation="slide-left">
             <div>
-              <p className="text-sm font-medium text-primary mb-4">Get In Touch</p>
+              <p className="text-sm font-medium text-primary mb-4">Liên Hệ</p>
               <h2 className="heading-lg mb-6">
-                Let's build something <span className="gradient-text">amazing</span> together
+                Cùng nhau xây dựng điều <span className="gradient-text">tuyệt vời</span>
               </h2>
               <p className="body-lg mb-10">
-                Have a project in mind or just want to chat? I'm always open to discussing
-                new opportunities, creative ideas, or ways to help bring your vision to life.
+                Bạn có ý tưởng dự án hoặc muốn trò chuyện? Tôi luôn sẵn sàng thảo luận về
+                cơ hội mới, ý tưởng sáng tạo hoặc cách để hiện thực hóa tầm nhìn của bạn.
               </p>
 
               <div className="space-y-6">
@@ -69,7 +69,7 @@ const Contact = () => {
                       <MapPin className="text-primary group-hover:scale-110 transition-transform" size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Location</p>
+                      <p className="text-sm text-muted-foreground">Địa điểm</p>
                       <p className="font-medium text-foreground">9 District, Ho Chi Minh city</p>
                     </div>
                   </div>
@@ -84,7 +84,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="group">
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 group-focus-within:text-primary transition-colors">
-                    Name
+                    Tên
                   </label>
                   <input
                     type="text"
@@ -94,7 +94,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300"
-                    placeholder="Your name"
+                    placeholder="Tên của bạn"
                   />
                 </div>
 
@@ -116,7 +116,7 @@ const Contact = () => {
 
                 <div className="group">
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2 group-focus-within:text-primary transition-colors">
-                    Message
+                    Tin nhắn
                   </label>
                   <textarea
                     id="message"
@@ -126,7 +126,7 @@ const Contact = () => {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300 resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder="Cho tôi biết về dự án của bạn..."
                   />
                 </div>
 
@@ -139,11 +139,11 @@ const Contact = () => {
                     {isSubmitting ? (
                       <>
                         <span className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                        Sending...
+                        Đang gửi...
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Gửi Tin Nhắn
                         <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </>
                     )}

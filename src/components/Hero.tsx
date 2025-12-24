@@ -1,8 +1,19 @@
 import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Hero3DKeyboard from './Hero3DKeyboard';
+import { useTheme } from './ThemeProvider';
 
 const Hero = () => {
+  const { theme } = useTheme();
+
+  // Basic check, strictly speaking we might want to listen to system preference changes if theme is 'system'
+  // but for immediate toggle feedback this works if user toggles explicit dark/light.
+  // If system, we default to dark logic for now or could implement a hook for resolved theme.
+  const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+  const projectsBtnClass = isDark ? "btn-primary" : "btn-secondary";
+  const blogBtnClass = isDark ? "btn-secondary" : "btn-primary";
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient orbs */}
@@ -29,9 +40,9 @@ const Hero = () => {
               className="heading-xl mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.2s' }}
             >
-              Hi, I'm <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Ryan Quy</span>
+              Xin chào, tôi là <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Ryan Quy</span>
               <br />
-              <span className="text-muted-foreground">Software Developer</span>
+              <span className="text-muted-foreground">Lập Trình Viên</span>
             </h1>
 
             {/* Description */}
@@ -39,8 +50,8 @@ const Hero = () => {
               className="body-lg max-w-xl mb-10 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.3s' }}
             >
-              I craft elegant digital experiences with clean code and thoughtful design.
-              Specializing in React, TypeScript, and modern web technologies.
+              Tôi tạo ra những trải nghiệm kỹ thuật số tinh tế với mã nguồn sạch và thiết kế tỉ mỉ.
+              Chuyên về React, TypeScript và các công nghệ web hiện đại.
             </p>
 
             {/* CTA buttons */}
@@ -48,14 +59,21 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-start gap-4 mb-12 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.4s' }}
             >
-              <a href="#projects" className="btn-primary group relative overflow-hidden">
-                <span className="relative z-10">View My Work</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <a href="#projects" className={`${projectsBtnClass} group relative overflow-hidden`}>
+                <span className="relative z-10">Xem Dự Án</span>
+                {isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
+                {!isDark && <span className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
               </a>
-              <a href="#contact" className="btn-secondary group">
-                <span>Get In Touch</span>
-                <span className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />
-              </a>
+              <Link to="/blog" className={`${blogBtnClass} group relative overflow-hidden`}>
+                <span className="relative z-10">Xem Blog</span>
+                {/* Apply effects based on which style is active */}
+                {!isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
+                {isDark && <span className="absolute invisible border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
+                {/* Note: The secondary button in original code had the border span. The primary had the gradient div. 
+                     I should swap these inner elements too or control their visibility. 
+                     Actually, a cleaner way is to render based on the class logic.
+                  */}
+              </Link>
             </div>
 
             {/* Social links */}
@@ -101,7 +119,7 @@ const Hero = () => {
             href="#about"
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
           >
-            <span className="text-xs font-medium">Scroll</span>
+            <span className="text-xs font-medium">Cuộn xuống</span>
             <ArrowDown size={16} className="animate-bounce group-hover:text-primary transition-colors" />
           </a>
         </div>

@@ -73,12 +73,12 @@ const AllBlogs = () => {
 
                     <AnimateOnScroll animation="fade-up">
                         <div className="text-center max-w-3xl mx-auto mb-16">
-                            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-4">The Blog</p>
+                            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-4">Blog</p>
                             <h1 className="heading-xl mb-6">
-                                Explore <span className="gradient-text">Insights</span> & <span className="gradient-text">Stories</span>
+                                Khám Phá <span className="gradient-text">Kiến Thức</span> & <span className="gradient-text">Câu Chuyện</span>
                             </h1>
                             <p className="body-lg text-muted-foreground">
-                                A curation of thoughts on development, design, and everything tech.
+                                Tổng hợp suy nghĩ về phát triển, thiết kế và công nghệ.
                             </p>
                         </div>
                     </AnimateOnScroll>
@@ -91,7 +91,7 @@ const AllBlogs = () => {
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
                                 <input
                                     type="text"
-                                    placeholder="Search posts..."
+                                    placeholder="Tìm kiếm bài viết..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     className="w-full bg-background border border-input rounded-xl py-2 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
@@ -111,19 +111,19 @@ const AllBlogs = () => {
                                 <button
                                     onClick={() => setSelectedCategory(null)}
                                     className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === null
-                                            ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                                            : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
+                                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                        : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                                         }`}
                                 >
-                                    All
+                                    Tất cả
                                 </button>
                                 {categories.map(category => (
                                     <button
                                         key={category}
                                         onClick={() => setSelectedCategory(category)}
                                         className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
-                                                ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
-                                                : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
+                                            ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                            : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                                             }`}
                                     >
                                         {category}
@@ -150,12 +150,12 @@ const AllBlogs = () => {
                         </div>
                     ) : (
                         <div className="text-center py-20">
-                            <p className="text-xl text-muted-foreground">No posts found matching your criteria.</p>
+                            <p className="text-xl text-muted-foreground">Không tìm thấy bài viết nào phù hợp.</p>
                             <button
                                 onClick={() => { setSearchQuery(''); setSelectedCategory(null); }}
                                 className="mt-4 text-primary hover:underline"
                             >
-                                Clear filters
+                                Xóa bộ lọc
                             </button>
                         </div>
                     )}

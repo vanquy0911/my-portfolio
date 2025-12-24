@@ -39,16 +39,16 @@ const Projects = () => {
         <AnimateOnScroll animation="fade-up">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div className="max-w-2xl">
-              <p className="text-sm font-medium text-primary mb-4">Selected Work</p>
+              <p className="text-sm font-medium text-primary mb-4">Dự Án Tiêu Biểu</p>
               <h2 className="heading-lg">
-                Projects I've <span className="gradient-text">crafted</span>
+                Các dự án tôi đã <span className="gradient-text">thực hiện</span>
               </h2>
             </div>
             <Link
               to="/projects"
               className="btn-secondary group"
             >
-              View All Projects
+              Xem Tất Cả
               <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
@@ -101,7 +101,7 @@ const Projects = () => {
                     <span
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      <Github size={16} /> View Details
+                      <Github size={16} /> Xem Chi Tiết
                     </span>
                   </div>
                 </div>

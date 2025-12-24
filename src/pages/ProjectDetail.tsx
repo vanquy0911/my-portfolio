@@ -23,7 +23,7 @@ const ProjectDetail = () => {
     fetchProject();
   }, [slug]);
 
-  if (loading) return <div>Loading...</div>; // Ideally a skeleton loader
+  if (loading) return <div>Đang tải...</div>; // Ideally a skeleton loader
 
   if (!project) {
     return <NotFound />;
@@ -36,7 +36,7 @@ const ProjectDetail = () => {
       <main className="pt-24 pb-16">
         <div className="section-container">
           <Link to="/projects" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
-            <ArrowLeft size={16} /> Back to Projects
+            <ArrowLeft size={16} /> Trở về Dự Án
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -64,7 +64,7 @@ const ProjectDetail = () => {
                     rel="noreferrer"
                     className="flex-1 btn-primary justify-center"
                   >
-                    Live Demo <ArrowUpRight size={18} />
+                    Xem Demo <ArrowUpRight size={18} />
                   </a>
                 )}
               </div>
@@ -87,14 +87,14 @@ const ProjectDetail = () => {
               </p>
 
               <div className="space-y-6">
-                <h3 className="text-xl font-semibold">About the Project</h3>
+                <h3 className="text-xl font-semibold">Giới thiệu về dự án</h3>
                 <div className="text-muted-foreground">
                   {/* Render the markdown content */}
                   <MarkdownRenderer content={project.content} />
                 </div>
                 <div className="p-4 bg-secondary/30 rounded-lg border border-border">
                   <p className="text-sm text-muted-foreground">
-                    Project Status: {project.featured ? 'Featured' : 'Completed'}
+                    Trạng thái dự án: {project.featured ? 'Nổi bật' : 'Hoàn thành'}
                   </p>
                 </div>
               </div>

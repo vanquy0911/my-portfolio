@@ -20,16 +20,19 @@ const Footer = () => {
           {/* Navigation */}
           <nav className="flex items-center gap-8">
             <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              About
+              Giới Thiệu
             </a>
             <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Projects
+              Dự Án
+            </a>
+            <a href="/certificates" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Chứng Chỉ
             </a>
             <a href="#blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Blog
+              Bài Viết
             </a>
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Contact
+              Liên Hệ
             </a>
           </nav>
 
@@ -54,7 +57,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 

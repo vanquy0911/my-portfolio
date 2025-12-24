@@ -9,10 +9,10 @@ const skills = [
 ];
 
 const highlights = [
-  { icon: Code2, title: 'Clean Code', description: 'Writing maintainable, well-documented code that scales' },
-  { icon: Palette, title: 'Design Focus', description: 'Creating intuitive interfaces with attention to detail' },
-  { icon: Rocket, title: 'Performance', description: 'Optimizing for speed and best user experience' },
-  { icon: Users, title: 'Collaboration', description: 'Working effectively with cross-functional teams' },
+  { icon: Code2, title: 'Clean Code', description: 'Viết mã sạch, dễ bảo trì và mở rộng' },
+  { icon: Palette, title: 'Tư Duy Thiết Kế', description: 'Tạo giao diện trực quan, chú ý đến chi tiết' },
+  { icon: Rocket, title: 'Hiệu Suất', description: 'Tối ưu hóa tốc độ và trải nghiệm người dùng' },
+  { icon: Users, title: 'Hợp Tác', description: 'Làm việc hiệu quả với đội nhóm' },
 ];
 
 const About = () => {
@@ -23,15 +23,14 @@ const About = () => {
         <AnimateOnScroll animation="fade-up">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="max-w-2xl">
-              <p className="text-sm font-medium text-primary mb-4">About Me</p>
+              <p className="text-sm font-medium text-primary mb-4">Giới Thiệu</p>
               <h2 className="heading-lg mb-6">
-                Passionate about building <span className="gradient-text">meaningful products</span>
+                Đam mê xây dựng những <span className="gradient-text">sản phẩm ý nghĩa</span>
               </h2>
               <p className="body-lg">
-                I am an IT student with a strong interest in web development,
-                building projects using React.js, Node.js, Express.js, JavaScript, TypeScript,
-                and Tailwind CSS. I am looking for an Intern position to gain real-world experience,
-                learn from professionals, and grow as a developer.
+                Tôi là sinh viên CNTT năm cuối đam mê phát triển web, chuyên xây dựng các dự án với React.js,
+                Node.js, Express.js và Tailwind CSS. Tôi đang tìm kiếm cơ hội thực tập để tích lũy
+                kinh nghiệm thực tế và phát triển bản thân.
               </p>
             </div>
 
@@ -69,7 +68,7 @@ const About = () => {
         {/* Skills */}
         <AnimateOnScroll animation="fade-up" delay={200}>
           <div className="bg-card rounded-2xl border border-border p-8 md:p-12">
-            <h3 className="heading-md mb-8">Technical Skills</h3>
+            <h3 className="heading-md mb-8">Kỹ Năng</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {skills.map((skillGroup, groupIndex) => (
                 <AnimateOnScroll key={skillGroup.category} delay={groupIndex * 150} animation="slide-left">

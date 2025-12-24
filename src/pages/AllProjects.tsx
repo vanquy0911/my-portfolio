@@ -26,12 +26,12 @@ const AllProjects = () => {
                 <div className="section-container">
                     <AnimateOnScroll animation="fade-up">
                         <div className="max-w-2xl mb-12">
-                            <p className="text-sm font-medium text-primary mb-4">Portfolio</p>
+                            <p className="text-sm font-medium text-primary mb-4">Hồ Sơ Năng Lực</p>
                             <h1 className="heading-lg mb-6">
-                                All <span className="gradient-text">Projects</span>
+                                Tất Cả <span className="gradient-text">Dự Án</span>
                             </h1>
                             <p className="text-muted-foreground text-lg">
-                                A collection of my work, side projects, and experiments.
+                                Bộ sưu tập các dự án cá nhân và thử nghiệm của tôi.
                             </p>
                         </div>
                     </AnimateOnScroll>

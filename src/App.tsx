@@ -9,6 +9,7 @@ import AllProjects from "./pages/AllProjects";
 import ProjectDetail from "./pages/ProjectDetail";
 import AllBlogs from "./pages/AllBlogs";
 import BlogDetail from "./pages/BlogDetail";
+import AllCertificates from "./pages/AllCertificates";
 
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<AllProjects />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
+          <Route path="/certificates" element={<AllCertificates />} />
           <Route path="/blog" element={<AllBlogs />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
 
