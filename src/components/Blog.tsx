@@ -1,4 +1,5 @@
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AnimateOnScroll } from './AnimateOnScroll';
 
 const posts = [
@@ -97,13 +98,13 @@ const Blog = () => {
                 Sharing insights on development, design, and the journey of building great software.
               </p>
             </div>
-            <a 
-              href="#" 
+            <Link 
+              to="/blog" 
               className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border border-border/50 bg-card/50 backdrop-blur-sm text-foreground hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
             >
               View All Posts 
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </Link>
           </div>
         </AnimateOnScroll>
 
