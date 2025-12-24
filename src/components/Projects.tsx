@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AnimateOnScroll } from './AnimateOnScroll';
 
 const projects = [
@@ -53,15 +54,13 @@ const Projects = () => {
                 Projects I've <span className="gradient-text">crafted</span>
               </h2>
             </div>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/projects"
               className="btn-secondary group"
             >
-              View All on GitHub
+              View All Projects
               <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
+            </Link>
           </div>
         </AnimateOnScroll>
 
