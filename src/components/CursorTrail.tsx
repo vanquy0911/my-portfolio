@@ -72,7 +72,7 @@ const CursorTrail = () => {
     if (isVisible.current || trailPoints.current.some(p => p.opacity > 0.01)) {
       for (let i = TRAIL_LENGTH - 1; i >= 0; i--) {
         const point = trailPoints.current[i];
-        const size = 12 + (1 - i / TRAIL_LENGTH) * 24;
+        const size = 4 + (1 - i / TRAIL_LENGTH) * 10;
         const progress = i / TRAIL_LENGTH;
 
         // Create gradient colors: indigo -> cyan -> purple
@@ -115,14 +115,14 @@ const CursorTrail = () => {
       const mainPoint = trailPoints.current[0];
       const mainGradient = ctx.createRadialGradient(
         mainPoint.x, mainPoint.y, 0,
-        mainPoint.x, mainPoint.y, 50
+        mainPoint.x, mainPoint.y, 25
       );
       mainGradient.addColorStop(0, `rgba(99, 102, 241, ${mainPoint.opacity * 0.3})`);
       mainGradient.addColorStop(0.5, `rgba(6, 182, 212, ${mainPoint.opacity * 0.15})`);
       mainGradient.addColorStop(1, 'rgba(168, 85, 247, 0)');
 
       ctx.beginPath();
-      ctx.arc(mainPoint.x, mainPoint.y, 50, 0, Math.PI * 2);
+      ctx.arc(mainPoint.x, mainPoint.y, 25, 0, Math.PI * 2);
       ctx.fillStyle = mainGradient;
       ctx.fill();
     }
