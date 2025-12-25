@@ -29,7 +29,6 @@ Ba khái niệm cốt lõi giúp bạn làm được điều đó chính là:
 
 Đây là nền tảng của **mọi chương trình**, từ script đơn giản đến ứng dụng web phức tạp.
 
----
 
 ## 2. Câu điều kiện trong JavaScript
 
@@ -51,7 +50,6 @@ Nguyên tắc:
 - Điều kiện phải trả về `true` hoặc `false`
 - Code chỉ chạy khi điều kiện đúng
 
----
 
 ### 2.2 else if
 
@@ -69,7 +67,6 @@ if (score >= 90) {
 }
 ```
 
----
 
 ### 2.3 switch case
 
@@ -92,13 +89,11 @@ switch (role) {
 
 ⚠️ Luôn nhớ `break` để tránh lỗi logic.
 
----
 
 ## 3. Vòng lặp trong JavaScript
 
 Vòng lặp giúp bạn **lặp lại hành động** nhiều lần.
 
----
 
 ### 3.1 for loop
 
@@ -113,7 +108,6 @@ Cấu trúc:
 - Điều kiện
 - Tăng/giảm
 
----
 
 ### 3.2 while loop
 
@@ -126,7 +120,7 @@ while (count < 3) {
 }
 ```
 
----
+
 
 ### 3.3 do...while
 
@@ -141,7 +135,7 @@ do {
 } while (x < 5);
 ```
 
----
+
 
 ### 3.4 for...of (khuyến khích)
 
@@ -153,7 +147,6 @@ for (const fruit of fruits) {
 }
 ```
 
----
 
 ### 3.5 for...in (ít dùng)
 
@@ -165,7 +158,6 @@ for (const key in user) {
 }
 ```
 
----
 
 ## 4. Hàm trong JavaScript
 
@@ -174,7 +166,7 @@ Hàm giúp bạn:
 - Code gọn gàng
 - Dễ bảo trì
 
----
+
 
 ### 4.1 Function declaration
 
@@ -184,7 +176,6 @@ function greet(name) {
 }
 ```
 
----
 
 ### 4.2 Function expression
 
@@ -194,7 +185,6 @@ const greet = function (name) {
 };
 ```
 
----
 
 ### 4.3 Arrow function
 
@@ -210,7 +200,6 @@ Viết ngắn hơn:
 const greet = name => `Hello ${name}`;
 ```
 
----
 
 ## 5. Tham số và giá trị trả về
 
@@ -224,7 +213,6 @@ sum(2, 3); // 5
 
 Nếu không có `return` → hàm trả về `undefined`.
 
----
 
 ## 6. Scope trong hàm
 
@@ -240,7 +228,6 @@ function test() {
 - Biến trong hàm không dùng được bên ngoài
 - Tránh dùng global variable quá nhiều
 
----
 
 ## 7. Callback function
 
@@ -256,8 +243,6 @@ handle(() => {
 });
 ```
 
----
-
 ## 8. Lỗi phổ biến của người mới
 
 - Quên `return`
@@ -265,7 +250,6 @@ handle(() => {
 - Lạm dụng `for...in`
 - Không hiểu scope
 
----
 
 ## 9. Best Practices
 
@@ -274,10 +258,8 @@ handle(() => {
 - Hàm chỉ nên làm **1 nhiệm vụ**
 - Đặt tên hàm rõ nghĩa
 
----
 
 ## 10. Kết luận
 
 Câu điều kiện, vòng lặp và hàm là **trái tim của lập trình JavaScript**.  
 Khi nắm vững phần này, bạn đã sẵn sàng bước sang **JavaScript 2** với các chủ đề nâng cao hơn như array methods, async, DOM và API.
-

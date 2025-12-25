@@ -85,23 +85,23 @@ const AllBlogs = () => {
 
                     {/* Controls */}
                     <AnimateOnScroll animation="fade-up" delay={100}>
-                        <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-12 p-4 bg-card/50 backdrop-blur-sm border border-border rounded-2xl shadow-sm">
+                        <div className="flex flex-col md:flex-row gap-3 items-center justify-between mb-12">
                             {/* Search */}
-                            <div className="relative w-full md:w-96">
-                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
+                            <div className="relative w-full md:w-80">
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
                                 <input
                                     type="text"
                                     placeholder="Tìm kiếm bài viết..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
-                                    className="w-full bg-background border border-input rounded-xl py-2 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                                    className="w-full bg-card/50 backdrop-blur-sm border border-border rounded-lg py-2 pl-9 pr-9 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
                                 />
                                 {searchQuery && (
                                     <button
                                         onClick={() => setSearchQuery('')}
-                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                                     >
-                                        <X size={16} />
+                                        <X size={14} />
                                     </button>
                                 )}
                             </div>
@@ -110,8 +110,8 @@ const AllBlogs = () => {
                             <div className="flex items-center gap-2 overflow-x-auto max-w-full pb-2 md:pb-0 scrollbar-hide">
                                 <button
                                     onClick={() => setSelectedCategory(null)}
-                                    className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === null
-                                        ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                    className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${selectedCategory === null
+                                        ? 'bg-primary text-primary-foreground shadow-sm'
                                         : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                                         }`}
                                 >
@@ -121,8 +121,8 @@ const AllBlogs = () => {
                                     <button
                                         key={category}
                                         onClick={() => setSelectedCategory(category)}
-                                        className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
-                                            ? 'bg-primary text-primary-foreground shadow-md shadow-primary/20'
+                                        className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${selectedCategory === category
+                                            ? 'bg-primary text-primary-foreground shadow-sm'
                                             : 'bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground'
                                             }`}
                                     >
