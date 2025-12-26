@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CursorTrail from '@/components/CursorTrail';
 import { AnimateOnScroll } from '@/components/AnimateOnScroll';
+import personImages from '@/uploads/personal/person.jpg';
 import { Code2, Rocket, Heart, Target, Award, BookOpen, Users, Zap } from 'lucide-react';
 
 const AboutPage = () => {
@@ -73,7 +74,6 @@ const AboutPage = () => {
                     <div className="absolute top-0 right-0 -z-10 opacity-20 transform translate-x-1/2 -translate-y-1/2">
                         <div className="w-96 h-96 bg-primary/30 rounded-full blur-3xl"></div>
                     </div>
-
                     <AnimateOnScroll animation="fade-up">
                         <div className="max-w-4xl mx-auto text-center mb-16">
                             <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-4">About Me</p>
@@ -118,7 +118,7 @@ const AboutPage = () => {
                                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
                                 <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-border bg-card">
                                     <img
-                                        src="src/uploads/personal/person.jpg"
+                                        src={personImages}
                                         alt="Profile"
                                         className="w-full h-full object-cover"
                                     />
