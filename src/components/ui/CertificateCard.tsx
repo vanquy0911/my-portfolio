@@ -35,9 +35,15 @@ export const CertificateCard = ({ certificate, index = 0 }: CertificateCardProps
                         <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                             {certificate.name}
                         </h3>
-                        <p className="text-sm text-muted-foreground mb-4">
-                            {certificate.filename}
-                        </p>
+                        {certificate.description ? (
+                            <p className="text-sm text-muted-foreground mb-4">
+                                {certificate.description}
+                            </p>
+                        ) : (
+                            <p className="text-sm text-muted-foreground mb-4">
+                                {certificate.filename}
+                            </p>
+                        )}
                         <div className="flex items-center gap-2 text-sm text-primary">
                             <span>Xem chứng chỉ</span>
                             <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
