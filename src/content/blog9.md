@@ -1,5 +1,5 @@
 ---
-title: "Khám Phá Sức Mạnh Của Built-in Objects Trong JavaScript"
+title: "JavaScript 2 - Khám Phá Sức Mạnh Của Built-in Objects Trong JavaScript"
 slug: "kham-pha-built-in-objects-javascript"
 description: "Tìm hiểu chi tiết về các Built-in Objects trong JavaScript: Object, Array, String, Math, Date, JSON, RegExp và ứng dụng thực tế trong lập trình web."
 date: "2025-03-01"

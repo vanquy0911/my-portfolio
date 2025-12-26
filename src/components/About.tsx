@@ -27,10 +27,12 @@ const About = () => {
               <h2 className="heading-lg mb-6">
                 Đam mê xây dựng những <span className="gradient-text">sản phẩm ý nghĩa</span>
               </h2>
-              <p className="body-lg">
+              <p className="body-lg leading-loose">
                 Tôi là sinh viên CNTT năm cuối đam mê phát triển web, chuyên xây dựng các dự án với React.js,
-                Node.js, Express.js và Tailwind CSS. Tôi đang tìm kiếm cơ hội thực tập để tích lũy
-                kinh nghiệm thực tế và phát triển bản thân.
+                Node.js, Express.js và Tailwind CSS. Bên cạnh kiến thức lý thuyết, tôi luôn chủ động tham gia các dự án
+                cá nhân để rèn luyện kỹ năng lập trình, tư duy giải quyết vấn đề
+                và khả năng tự học công nghệ mới.<br />
+                Tôi đang tìm kiếm cơ hội thực tập để tích lũy kinh nghiệm thực tế và phát triển bản thân.
               </p>
             </div>
 
