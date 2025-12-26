@@ -10,6 +10,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import AllBlogs from "./pages/AllBlogs";
 import BlogDetail from "./pages/BlogDetail";
 import AllCertificates from "./pages/AllCertificates";
+import AboutPage from "./pages/AboutPage";
 
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<AllProjects />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
           <Route path="/certificates" element={<AllCertificates />} />

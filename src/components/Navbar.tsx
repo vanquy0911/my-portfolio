@@ -10,11 +10,11 @@ type NavLinkItem = {
 
 const navLinks: NavLinkItem[] = [
   { href: '/', label: 'Trang Chủ', type: 'route' },
-
+  { href: '/about', label: 'Giới thiệu', type: 'route' },
   { href: '/projects', label: 'Dự Án', type: 'route' },
   { href: '/certificates', label: 'Chứng Chỉ', type: 'route' },
   { href: '/blog', label: 'Bài Viết', type: 'route' },
-  { href: '/#contact', label: 'Liên Hệ', type: 'anchor' },
+  // { href: '/#contact', label: 'Liên Hệ', type: 'anchor' },
 ]
 
 const Navbar = () => {

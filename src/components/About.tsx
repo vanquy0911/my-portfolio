@@ -1,6 +1,8 @@
 import { Code2, Palette, Rocket, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AnimateOnScroll } from './AnimateOnScroll';
 import personImage from '@/uploads/personal/person.jpg';
+import { useTheme } from './ThemeProvider';
 
 const skills = [
   { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'] },
@@ -16,6 +18,10 @@ const highlights = [
 ];
 
 const About = () => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const projectsBtnClass = isDark ? "btn-primary" : "btn-secondary";
+
   return (
     <section id="about" className="section-padding bg-secondary/30">
       <div className="section-container">
@@ -24,16 +30,14 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="max-w-2xl">
               <p className="text-sm font-medium text-primary mb-4">Giới Thiệu</p>
-              <h2 className="heading-lg mb-6">
-                Đam mê xây dựng những <span className="gradient-text">sản phẩm ý nghĩa</span>
+              <h2 className="heading-xl mb-6 font-bold">
+                <span className="gradient-text">Learn every day,</span> <span className="gradient-text">grow every day.</span>
               </h2>
-              <p className="body-lg leading-loose">
-                Tôi là sinh viên CNTT năm cuối đam mê phát triển web, chuyên xây dựng các dự án với React.js,
-                Node.js, Express.js và Tailwind CSS. Bên cạnh kiến thức lý thuyết, tôi luôn chủ động tham gia các dự án
-                cá nhân để rèn luyện kỹ năng lập trình, tư duy giải quyết vấn đề
-                và khả năng tự học công nghệ mới.<br />
-                Tôi đang tìm kiếm cơ hội thực tập để tích lũy kinh nghiệm thực tế và phát triển bản thân.
-              </p>
+              <Link to="/about" className={`${projectsBtnClass} group relative overflow-hidden inline-block`}>
+                <span className="relative z-10">View Profile</span>
+                {isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
+                {!isDark && <span className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
+              </Link>
             </div>
 
             {/* Profile Image */}

@@ -35,9 +35,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left content */}
           <div className="max-w-2xl">
-            {/* Main heading */}
+            {/* Main heading with new slogan */}
             <h1
-              className="heading-xl mb-6 opacity-0 animate-fade-in-up"
+              className="heading-xl mb-6 opacity-0 animate-fade-in-up font-bold"
               style={{ animationDelay: '0.2s' }}
             >
               Xin chào, tôi là <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Ryan Quy</span>
@@ -64,16 +64,11 @@ const Hero = () => {
                 {isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
                 {!isDark && <span className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
               </a>
-              <Link to="/blog" className={`${blogBtnClass} group relative overflow-hidden`}>
+              <a href="#projects" className={`${blogBtnClass} group relative overflow-hidden`}>
                 <span className="relative z-10">Xem Blog</span>
-                {/* Apply effects based on which style is active */}
                 {!isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
                 {isDark && <span className="absolute invisible border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
-                {/* Note: The secondary button in original code had the border span. The primary had the gradient div. 
-                     I should swap these inner elements too or control their visibility. 
-                     Actually, a cleaner way is to render based on the class logic.
-                  */}
-              </Link>
+              </a>
             </div>
 
             {/* Social links */}
