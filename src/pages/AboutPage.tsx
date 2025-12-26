@@ -85,13 +85,13 @@ const AboutPage = () => {
                             <div className="max-w-4xl mx-auto text-left space-y-12 mt-16">
                                 <AnimateOnScroll animation="fade-up" delay={100}>
                                     <p className="text-lg md:text-xl text-muted-foreground/90 lg:leading-[2.2] md:leading-[2] leading-relaxed">
-                                        Tôi là sinh viên ngành <span className="text-foreground font-bold decoration-primary/30 underline-offset-8">Công nghệ Thông tin</span>, có niềm đam mê với lĩnh vực <span className="text-foreground font-bold decoration-primary/30 underline-offset-8">phát triển web</span> và các công nghệ phần mềm hiện đại. Trong quá trình học tập và rèn luyện, tôi đã trang bị cho mình những kiến thức nền tảng về lập trình, đặc biệt là phát triển giao diện người dùng và xây dựng ứng dụng web.
+                                        Tôi là Văn Tấn Quý,đang là sinh viên năm cuối ngành <span className="text-foreground font-bold decoration-primary/30 underline-offset-8">Công nghệ Thông tin</span>, có niềm đam mê với lĩnh vực <span className="text-foreground font-bold decoration-primary/30 underline-offset-8">phát triển web và mobile</span> và các công nghệ phần mềm hiện đại. Trong quá trình học tập và rèn luyện, tôi đã trang bị cho mình những kiến thức nền tảng về lập trình, đặc biệt là phát triển giao diện người dùng và xây dựng ứng dụng web.
                                     </p>
                                 </AnimateOnScroll>
 
                                 <AnimateOnScroll animation="fade-up" delay={200}>
                                     <p className="text-lg md:text-xl text-muted-foreground/90 lg:leading-[2.2] md:leading-[2] leading-relaxed">
-                                        Hiện tại, tôi đã và đang học tập, tìm hiểu các công nghệ như <span className="text-foreground font-bold">JavaScript, TypeScript, React.js, Node.js, Express.js, HTML, CSS và Tailwind CSS</span>. Tôi có khả năng xây dựng giao diện web theo hướng component-based, chú trọng đến trải nghiệm người dùng, tính thẩm mỹ và khả năng mở rộng của hệ thống.
+                                        Hiện tại, tôi đã và đang học tập, tìm hiểu các công nghệ như <span className="text-foreground font-bold">JavaScript, TypeScript, React.js, Node.js, Express.js, Flutter, Dart,  HTML, CSS và Tailwind CSS</span>. Tôi có khả năng xây dựng giao diện web theo hướng component-based, chú trọng đến trải nghiệm người dùng, tính thẩm mỹ và khả năng mở rộng của hệ thống.
                                     </p>
                                 </AnimateOnScroll>
 

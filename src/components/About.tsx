@@ -30,8 +30,8 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="max-w-2xl">
               <p className="text-sm font-medium text-primary mb-4">Giới Thiệu</p>
-              <h2 className="heading-xl mb-6 font-bold">
-                <span className="gradient-text">Learn every day,</span> <span className="gradient-text">grow every day.</span>
+              <h2 className="text-7xl font-extrabold mb-6">
+                <span className="gradient-text">LEARN EVERY DAY,</span> <span className="gradient-text">GROW EVERY DAY.</span>
               </h2>
               <Link to="/about" className={`${projectsBtnClass} group relative overflow-hidden inline-block`}>
                 <span className="relative z-10">View Profile</span>
