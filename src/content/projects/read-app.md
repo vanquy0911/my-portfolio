@@ -8,6 +8,7 @@ image: 'read-app.jpg'
 githubUrl: 'https://github.com/NerdKandev/Sang03_Nhom01_AppTimBaiDocTheoNgay'
 featured: true
 category: 'Mobile App'
+role: 'Backend Developer'
 year: '2024'
 ---
 

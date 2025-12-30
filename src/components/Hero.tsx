@@ -1,6 +1,5 @@
 import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Hero3DKeyboard from './Hero3DKeyboard';
 import { useTheme } from './ThemeProvider';
 
 const Hero = () => {
@@ -40,7 +39,7 @@ const Hero = () => {
               className="heading-xl mb-6 opacity-0 animate-fade-in-up font-bold"
               style={{ animationDelay: '0.2s' }}
             >
-              Xin chào, tôi là <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Ryan Quy</span>
+              Xin chào, tôi là <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift"><br />Văn Tấn Quý</span>
               <br />
               <span className="text-muted-foreground">Lập Trình Viên</span>
             </h1>
@@ -97,12 +96,7 @@ const Hero = () => {
           </div>
 
           {/* Right 3D Keyboard */}
-          <div
-            className="hidden lg:block h-[500px] opacity-0 animate-fade-in"
-            style={{ animationDelay: '0.6s' }}
-          >
-            <Hero3DKeyboard />
-          </div>
+
         </div>
 
         {/* Scroll indicator */}
@@ -119,7 +113,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

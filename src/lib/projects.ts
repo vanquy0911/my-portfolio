@@ -11,6 +11,7 @@ export interface Project {
     featured: boolean;
     category: string;
     year: string;
+    role?: string;
     id: string; // Keep ID for compatibility, though slug is better
     content: string;
 }
@@ -26,6 +27,7 @@ export interface ProjectFrontMatter {
     featured: boolean;
     category: string;
     year: string;
+    role?: string;
     id?: string;
 }
 
@@ -60,6 +62,7 @@ export const getProjects = async (): Promise<Project[]> => {
             slug: attributes.slug || path.split('/').pop()?.replace('.md', '') || '',
             id: attributes.id || Math.random().toString(36).substr(2, 9),
             githubUrl: attributes.githubUrl || '#',
+            role: attributes.role || 'Backend Developer',
         });
     }
 

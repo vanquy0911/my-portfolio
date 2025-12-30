@@ -50,11 +50,14 @@ const AllProjects = () => {
                                     </div>
                                     <div className="p-6 flex flex-col flex-grow">
                                         <div className="flex items-start justify-between mb-4">
-                                            <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                                                <Link to={`/project/${project.slug}`} className="hover:underline">
-                                                    {project.title}
-                                                </Link>
-                                            </h3>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
+                                                    <Link to={`/project/${project.slug}`} className="hover:underline">
+                                                        {project.title}
+                                                    </Link>
+                                                </h3>
+                                                {project.role && <p className="text-xs text-primary font-medium">{project.role}</p>}
+                                            </div>
                                             <div className="flex items-center gap-2">
                                                 <a
                                                     href={project.githubUrl}

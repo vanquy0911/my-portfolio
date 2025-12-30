@@ -4,40 +4,17 @@ import Footer from '@/components/Footer';
 import CursorTrail from '@/components/CursorTrail';
 import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import personImages from '@/uploads/personal/person.jpg';
-import { Code2, Rocket, Heart, Target, Award, BookOpen, Users, Zap } from 'lucide-react';
+import CV from '@/uploads/CV/CV.pdf';
+import { Code2, Rocket, Heart, Target, Users, Zap, Download } from 'lucide-react';
 
 const AboutPage = () => {
-    const [activeTab, setActiveTab] = useState<'skills' | 'timeline' | 'values'>('skills');
+    const [activeTab, setActiveTab] = useState<'skills' | 'values'>('skills');
 
     const skills = [
         { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'HTML/CSS'] },
         { category: 'Backend', items: ['Node.js', 'Express.js', 'MongoDB', 'PostgreSQL'] },
         { category: 'Tools', items: ['Git', 'VS Code', 'Figma', 'Postman'] },
         { category: 'Soft Skills', items: ['Problem Solving', 'Team Collaboration', 'Communication', 'Time Management'] },
-    ];
-
-    const timeline = [
-        {
-            year: '2024',
-            title: 'Full-Stack Developer',
-            company: 'Freelance',
-            description: 'Building modern web applications with React, Node.js, and cloud technologies.',
-            icon: Rocket,
-        },
-        {
-            year: '2023',
-            title: 'JavaScript Essentials Certification',
-            company: 'Cisco Networking Academy',
-            description: 'Completed advanced JavaScript training covering ES6+, async programming, and modern frameworks.',
-            icon: Award,
-        },
-        {
-            year: '2022',
-            title: 'Started Web Development Journey',
-            company: 'Self-Learning',
-            description: 'Began learning web development fundamentals and building first projects.',
-            icon: BookOpen,
-        },
     ];
 
     const values = [
@@ -131,19 +108,35 @@ const AboutPage = () => {
                 {/* Tabs Navigation */}
                 <section className="section-container mb-12">
                     <AnimateOnScroll animation="fade-up">
-                        <div className="flex justify-center gap-4 mb-12">
-                            {(['skills', 'timeline', 'values'] as const).map((tab) => (
-                                <button
-                                    key={tab}
-                                    onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === tab
-                                        ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
-                                        : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
-                                        }`}
-                                >
-                                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                                </button>
-                            ))}
+                        <div className="flex flex-wrap justify-center gap-4 mb-12">
+                            <button
+                                onClick={() => setActiveTab('skills')}
+                                className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === 'skills'
+                                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                                    : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
+                                    }`}
+                            >
+                                Skills
+                            </button>
+
+                            <a
+                                href={CV}
+                                download="VanTanQuy_CV.pdf"
+                                className="px-6 py-3 rounded-lg font-medium transition-all bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 hover:bg-primary/5 flex items-center gap-2"
+                            >
+                                <Download size={18} />
+                                Download CV
+                            </a>
+
+                            <button
+                                onClick={() => setActiveTab('values')}
+                                className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === 'values'
+                                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                                    : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
+                                    }`}
+                            >
+                                Values
+                            </button>
                         </div>
                     </AnimateOnScroll>
                 </section>
@@ -169,39 +162,6 @@ const AboutPage = () => {
                                     </div>
                                 </AnimateOnScroll>
                             ))}
-                        </div>
-                    </section>
-                )}
-
-                {/* Timeline Section */}
-                {activeTab === 'timeline' && (
-                    <section className="section-container">
-                        <div className="max-w-3xl mx-auto">
-                            <div className="relative">
-                                {/* Timeline line */}
-                                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary opacity-20"></div>
-
-                                {timeline.map((item, index) => (
-                                    <AnimateOnScroll key={item.year} delay={index * 100} animation="fade-up">
-                                        <div className="relative pl-20 pb-12 last:pb-0">
-                                            {/* Icon */}
-                                            <div className="absolute left-0 w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
-                                                <item.icon className="text-white" size={24} />
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 card-hover">
-                                                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
-                                                    {item.year}
-                                                </span>
-                                                <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
-                                                <p className="text-sm text-primary mb-3">{item.company}</p>
-                                                <p className="text-muted-foreground">{item.description}</p>
-                                            </div>
-                                        </div>
-                                    </AnimateOnScroll>
-                                ))}
-                            </div>
                         </div>
                     </section>
                 )}

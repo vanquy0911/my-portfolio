@@ -80,7 +80,14 @@ const Projects = () => {
 
                 {/* Project info */}
                 <div className="p-6 md:p-8">
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
+                    {project.role && (
+                      <span className="text-xs font-medium px-2 py-1 rounded bg-primary/10 text-primary whitespace-nowrap ml-2">
+                        {project.role}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
 
                   {/* Tags */}
@@ -117,7 +124,10 @@ const Projects = () => {
               <AnimateOnScroll key={project.title} delay={index * 100} animation="fade-up">
                 <Link to={`/project/${project.slug}`} className="block group p-6 bg-card rounded-xl border border-border card-hover hover:border-primary/30 transition-all duration-300">
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-1">{project.title}</h3>
+                      {project.role && <p className="text-xs text-primary font-medium">{project.role}</p>}
+                    </div>
                     <div className="flex items-center gap-2">
                       <span className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-all">
                         <Github size={18} />
