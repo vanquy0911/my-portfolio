@@ -28,9 +28,6 @@ const Footer = () => {
             <a href="/certificates" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Chứng Chỉ
             </a>
-            <a href="#blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Bài Viết
-            </a>
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Liên Hệ
             </a>

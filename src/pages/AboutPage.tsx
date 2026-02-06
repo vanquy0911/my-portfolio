@@ -4,15 +4,14 @@ import Footer from '@/components/Footer';
 import CursorTrail from '@/components/CursorTrail';
 import { AnimateOnScroll } from '@/components/AnimateOnScroll';
 import personImages from '@/uploads/personal/person.jpg';
-import CV from '@/uploads/CV/CV.pdf';
-import { Code2, Rocket, Heart, Target, Users, Zap, Download } from 'lucide-react';
+import { Code2, Rocket, Heart, Target, Award, BookOpen, Users, Zap } from 'lucide-react';
 
 const AboutPage = () => {
     const [activeTab, setActiveTab] = useState<'skills' | 'values'>('skills');
 
     const skills = [
         { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'HTML/CSS'] },
-        { category: 'Backend', items: ['Node.js', 'Express.js', 'MongoDB', 'PostgreSQL'] },
+        { category: 'Backend', items: ['Node.js', 'Express.js', 'MongoDB', 'ASP.Net Core', 'C#', 'JavaScript'] },
         { category: 'Tools', items: ['Git', 'VS Code', 'Figma', 'Postman'] },
         { category: 'Soft Skills', items: ['Problem Solving', 'Team Collaboration', 'Communication', 'Time Management'] },
     ];
@@ -108,35 +107,19 @@ const AboutPage = () => {
                 {/* Tabs Navigation */}
                 <section className="section-container mb-12">
                     <AnimateOnScroll animation="fade-up">
-                        <div className="flex flex-wrap justify-center gap-4 mb-12">
-                            <button
-                                onClick={() => setActiveTab('skills')}
-                                className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === 'skills'
-                                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
-                                    : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
-                                    }`}
-                            >
-                                Skills
-                            </button>
-
-                            <a
-                                href={CV}
-                                download="VanTanQuy_CV.pdf"
-                                className="px-6 py-3 rounded-lg font-medium transition-all bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 hover:bg-primary/5 flex items-center gap-2"
-                            >
-                                <Download size={18} />
-                                Download CV
-                            </a>
-
-                            <button
-                                onClick={() => setActiveTab('values')}
-                                className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === 'values'
-                                    ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
-                                    : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
-                                    }`}
-                            >
-                                Values
-                            </button>
+                        <div className="flex justify-center gap-4 mb-12">
+                            {(['skills', 'values'] as const).map((tab) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`px-6 py-3 rounded-lg font-medium transition-all ${activeTab === tab
+                                        ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                                        : 'bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/50'
+                                        }`}
+                                >
+                                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                                </button>
+                            ))}
                         </div>
                     </AnimateOnScroll>
                 </section>

@@ -5,9 +5,9 @@ import personImage from '@/uploads/personal/person.jpg';
 import { useTheme } from './ThemeProvider';
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'] },
-  { category: 'Backend', items: ['Node.js', 'Python', 'PostgreSQL', 'GraphQL'] },
-  { category: 'Tools', items: ['Git', 'Docker', 'AWS', 'Figma'] },
+  { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Bootstrap'] },
+  { category: 'Backend', items: ['Node.js', 'ASP.NET Core', 'C#', 'JavaScript'] },
+  { category: 'Tools', items: ['Git', 'Docker', 'Figma'] },
 ];
 
 const highlights = [

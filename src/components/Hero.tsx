@@ -1,5 +1,6 @@
 import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 import { useTheme } from './ThemeProvider';
 
 const Hero = () => {
@@ -11,7 +12,6 @@ const Hero = () => {
   const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   const projectsBtnClass = isDark ? "btn-primary" : "btn-secondary";
-  const blogBtnClass = isDark ? "btn-secondary" : "btn-primary";
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -31,22 +31,22 @@ const Hero = () => {
       />
 
       <div className="section-container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="flex flex-col items-center justify-center text-center">
           {/* Left content */}
-          <div className="max-w-2xl">
+          <div className="max-w-4xl flex flex-col items-center">
             {/* Main heading with new slogan */}
             <h1
               className="heading-xl mb-6 opacity-0 animate-fade-in-up font-bold"
               style={{ animationDelay: '0.2s' }}
             >
-              Xin chào, tôi là <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift"><br />Văn Tấn Quý</span>
+              Xin chào, tôi là <span className="gradient-text bg-[length:200%_auto] animate-gradient-shift">Ryan Quy</span>
               <br />
               <span className="text-muted-foreground">Lập Trình Viên</span>
             </h1>
 
             {/* Description */}
             <p
-              className="body-lg max-w-xl mb-10 opacity-0 animate-fade-in-up"
+              className="body-lg max-w-2xl mb-10 opacity-0 animate-fade-in-up mx-auto"
               style={{ animationDelay: '0.3s' }}
             >
               Tôi tạo ra những trải nghiệm kỹ thuật số tinh tế với mã nguồn sạch và thiết kế tỉ mỉ.
@@ -55,7 +55,7 @@ const Hero = () => {
 
             {/* CTA buttons */}
             <div
-              className="flex flex-col sm:flex-row items-start gap-4 mb-12 opacity-0 animate-fade-in-up"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.4s' }}
             >
               <a href="#projects" className={`${projectsBtnClass} group relative overflow-hidden`}>
@@ -63,16 +63,11 @@ const Hero = () => {
                 {isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
                 {!isDark && <span className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
               </a>
-              <a href="#projects" className={`${blogBtnClass} group relative overflow-hidden`}>
-                <span className="relative z-10">Xem Blog</span>
-                {!isDark && <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />}
-                {isDark && <span className="absolute invisible border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-all duration-300" />}
-              </a>
             </div>
 
             {/* Social links */}
             <div
-              className="flex items-center gap-6 opacity-0 animate-fade-in-up"
+              className="flex items-center justify-center gap-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.5s' }}
             >
               {[
@@ -113,7 +108,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

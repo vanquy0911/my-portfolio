@@ -8,7 +8,6 @@ image: 'devnotes.jpg'
 githubUrl: '#'
 featured: false
 category: 'Web App'
-role: 'Backend Developer'
 year: '2023'
 ---
 

@@ -8,7 +8,6 @@ image: 'hotel.jpg'
 githubUrl: 'https://github.com/vanquy0911/BE-HOTEL'
 featured: true
 category: 'Web App'
-role: 'Backend Developer'
 year: '2024'
 ---
 

@@ -88,8 +88,13 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
   }
 }
 
@@ -133,12 +138,10 @@
   }
 
   .animate-shimmer {
-    background: linear-gradient(
-      90deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--accent)) 50%,
-      hsl(var(--primary)) 100%
-    );
+    background: linear-gradient(90deg,
+        hsl(var(--primary)) 0%,
+        hsl(var(--accent)) 50%,
+        hsl(var(--primary)) 100%);
     background-size: 200% 100%;
   }
 }

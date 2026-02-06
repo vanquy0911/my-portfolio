@@ -4,7 +4,6 @@ import About from '@/components/About';
 
 import Technologies from '@/components/Technologies';
 import Projects from '@/components/Projects';
-import Blog from '@/components/Blog';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CursorTrail from '@/components/CursorTrail';
@@ -20,7 +19,6 @@ const Index = () => {
 
         <Technologies />
         <Projects />
-        <Blog />
         <Contact />
       </main>
       <Footer />

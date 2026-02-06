@@ -71,14 +71,7 @@ const ProjectDetail = () => {
             </div>
 
             <div>
-              <div className="flex flex-wrap items-center gap-4 mb-4">
-                <h1 className="heading-lg">{project.title}</h1>
-                {project.role && (
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20">
-                    {project.role}
-                  </span>
-                )}
-              </div>
+              <h1 className="heading-lg mb-4">{project.title}</h1>
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.map((tag) => (
                   <span
